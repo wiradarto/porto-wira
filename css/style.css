@@ -1,0 +1,84 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { font-family: 'Cormorant Garamond', serif; color: #f3efe8; background: #0d0c0a; }
+
+.fixed-bg {
+    position: fixed; inset: 0;
+    width: 100vw; height: 100vh;
+    object-fit: cover; z-index: -2;
+}
+
+body::before {
+    content: ""; position: fixed; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.35));
+    z-index: -1;
+}
+
+header { position: fixed; top: 0; left: 0; width: 100%; z-index: 20; }
+
+nav {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 12px;
+    padding: clamp(14px, 3vw, 28px) clamp(20px, 5vw, 60px);
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(14px, 1.8vw, 18px);
+    letter-spacing: 3px;
+    color: #fdfbf7;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; flex-wrap: wrap;
+    gap: clamp(12px, 2.5vw, 42px);
+}
+
+.nav-links a {
+    color: #fdfbf7; text-decoration: none;
+    font-size: clamp(14px, 1.6vw, 20px);
+    font-style: italic; opacity: .9;
+    white-space: nowrap;
+}
+.nav-links a:hover { opacity: 1; }
+
+.site-footer {
+    position: fixed; bottom: 18px; right: 24px;
+    font-size: 13px; color: rgba(255,255,255,.6); z-index: 20;
+}
+
+main { position: relative; z-index: 5; }
+
+.section {
+    min-height: 100vh; max-width: 900px;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.hero .eyebrow {
+    font-size: clamp(18px, 2vw, 26px);
+    margin-bottom: 4px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.hero .lead {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.55;
+    max-width: 640px;
+}
+
+/* HP kecil: logo + menu ditumpuk ke bawah supaya tidak terpotong */
+@media (max-width: 360px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

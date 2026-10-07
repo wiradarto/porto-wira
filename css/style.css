@@ -75,7 +75,7 @@ main { position: relative; z-index: 5; }
     max-width: 640px;
 }
 
-/* HP kecil: logo + menu ditumpuk ke bawah supaya tidak terpotong */
+
 @media (max-width: 360px) {
     nav {
         flex-direction: column;
